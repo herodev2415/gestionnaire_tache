@@ -24,6 +24,8 @@ let weeksday=[
        task: ""
     }
 ];
+// Nirintsoa
+// créer une liste de tâche avec le même length que la liste des jours
 let tasks = [
   "je vais à l'école",
   "je fais les courses",
@@ -32,7 +34,6 @@ let tasks = [
   "je fais le ménage",
   "je me repose",
   "je vais à l'église"
-
 ];
 
 
