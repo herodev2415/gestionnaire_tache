@@ -23,7 +23,20 @@ let weeksday=[
        day: "Sunday",
        task: ""
     }
-]
+];
+let tasks = [
+  "je vais à l'école",
+  "je fais les courses",
+  "je fais du sport",
+  "je travaille sur mes projets",
+  "je fais le ménage",
+  "je me repose",
+  "je vais à l'église"
+
+];
+
+
+
 for (let i = 0; i < weeksday.length; i++) {
     console.log(" voici le jour de la semaine " + weeksday[i].day + " et du tache " + weeksday[i].task)
 }
