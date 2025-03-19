@@ -34,6 +34,11 @@ let tasks = [
   "je vais à l'église"
 
 ];
+function addSpecificTasks(){
+  for(let i=0;i<weeksday.length;i++){
+    week[i].task=tasks[i].task;
+  }
+}
 
 
 
