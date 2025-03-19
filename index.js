@@ -36,6 +36,14 @@ let tasks = [
   "je vais à l'église"
 ];
 
+// Heritiana :
+// Ajouter les tâches specifique pour chaque journée dans la liste des jours en utilisant une boucle for dans une fonction.
+function addSpecificTasks(){
+  for(let i=0;i<weeksday.length;i++){
+    week[i].task=tasks[i].task;
+  }
+}
+
 
 
 for (let i = 0; i < weeksday.length; i++) {
