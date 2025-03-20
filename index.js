@@ -12,6 +12,10 @@ let weeksday=[
      task: ""  
     },
     {
+      day: "Thursday",
+      tasks: ""
+    },
+    {
       day: "Friday",
       task: ""
     },
@@ -40,9 +44,23 @@ let tasks = [
 // Ajouter les tâches specifique pour chaque journée dans la liste des jours en utilisant une boucle for dans une fonction.
 function addSpecificTasks(){
   for(let i=0;i<weeksday.length;i++){
-    week[i].task=tasks[i].task;
+    weeksday[i].task=tasks[i];
   }
 }
+
+// Tanjona
+// Affichage de la liste des jours avec les tâches mis à jour en utilisant une fonction qui les affiche sur une console
+function displayWeeksday() {
+  console.log("Liste des jours avec les tâches mises à jour:");
+  console.log("=========================================");
+  weeksday.forEach(day => {
+      console.log(`${day.day}: ${day.task}`);
+  });
+}
+
+// Exécution des fonctions
+addSpecificTasks(); // On met à jour les tâches
+displayWeeksday(); // On affiche la liste mise à jour 
 
 
 
