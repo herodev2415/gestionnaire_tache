@@ -69,7 +69,7 @@ for (let i = 0; i < weeksday.length; i++) {
 
 // une fonction qui change les jours en français
 
-function traduireJoursEnFrancais(weeksday) {
+function translateTheDayIntoFrench(weeksday) {
   const traduction = {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -80,11 +80,10 @@ function traduireJoursEnFrancais(weeksday) {
       "Sunday": "Dimanche"
   };
 
-  return weeksday.map(objetJour => ({
-      day: traduction[objetJour.day] || objetJour.day, // Remplace si trouvé
-      task: objetJour.task
-  }));
-}
+  for (let i = 0; i < weeksday.length; i++) {
+        weeksday[i].day = traduction[weeksday[i].day]||weeksday[i].day;
+    }
+
 
 
 // Nirintsoa : Function pour supprimer les deux dernière tàches et ajoute deux nouvelles tâches.
@@ -101,4 +100,31 @@ function removeTaskString(){
     weeksday[i].task=""
   }
 }
+
+// Tanjona:
+// Reaffichage de la liste mis à jour de la liste de jours
+//Exécution  des fonctions
+addSpecificTasks();
+displayWeeksday();
+  
+//Affichage des jours un par un
+for (let i = 0; i<weeksday.length; i++){
+  console.log(`Voici le jour de la semaine ${weeksday[i].day} et sa tâche: ${weeksday[i].task}`);
+
+}
+// **Mise à jour des tâches**
+updateTasks();       // Supprime et ajoute de nouvelles tâches
+addSpecificTasks();  // Réassigne les nouvelles tâches
+console.log("\nAprès modification des tâches :");
+displayWeeksday();   // Affiche la liste mise à jour
+
+// **Traduction des jours en français**
+translateTheDayIntoFrench();
+console.log("\nAprès traduction des jours en français :");
+displayWeeksday();   // Affiche la liste avec les jours en français
+
+// **Nettoyage des tâches**
+removeTaskString();
+console.log("\nAprès suppression des tâches :");
+displayWeeksday();   // Affiche la liste avec les tâches vides
 
