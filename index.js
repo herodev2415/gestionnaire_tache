@@ -92,7 +92,8 @@ function traduireJoursEnFrancais(weeksday) {
 
 function updateTasks () {
   tasks.splice(5, 6); // supprimer
-  tasks.push("je vais au marché", "je fais du sport") // ajouter 
+  tasks.push("je vais au marché", "je fais du sport"); // ajouter 
+}
 =======
 // Heritiana : 
 // Créer une fonction qui nettoie toutes les tâches en string vide, en utilisant une boucle for et ce qui est nécessaire. 
