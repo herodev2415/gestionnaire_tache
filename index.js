@@ -28,8 +28,7 @@ let weeksday=[
        task: ""
     }
 ];
-// Nirintsoa
-// créer une liste de tâche avec le même length que la liste des jours
+// Nirintsoa : créer une liste de tâche avec le même length que la liste des jours
 let tasks = [
   "je vais à l'école",
   "je fais les courses",
@@ -85,5 +84,13 @@ function traduireJoursEnFrancais(weeksday) {
       day: traduction[objetJour.day] || objetJour.day, // Remplace si trouvé
       task: objetJour.task
   }));
+}
+
+
+// Nirintsoa : Function pour supprimer les deux dernière tàches et ajoute deux nouvelles tâches.
+
+function updateTasks () {
+  tasks.splice(5, 6); // supprimer
+  tasks.push("je vais au marché", "je fais du sport") // ajouter 
 }
 
