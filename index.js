@@ -87,3 +87,11 @@ function traduireJoursEnFrancais(weeksday) {
   }));
 }
 
+// Heritiana : 
+// Créer une fonction qui nettoie toutes les tâches en string vide, en utilisant une boucle for et ce qui est nécessaire. 
+function removeTaskString(){
+  for(let i=0;i<weeksday.length;i++){
+    weeksday[i].task=""
+  }
+}
+
