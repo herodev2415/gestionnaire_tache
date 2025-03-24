@@ -1,3 +1,4 @@
+// Tolotra
 let weeksday=[
     {
      day: "Monday",
@@ -13,7 +14,7 @@ let weeksday=[
     },
     {
       day: "Thursday",
-      tasks: ""
+      task: ""
     },
     {
       day: "Friday",
@@ -30,6 +31,7 @@ let weeksday=[
 ];
 // Nirintsoa : créer une liste de tâche avec le même length que la liste des jours
 let tasks = [
+  
   "je vais à l'école",
   "je fais les courses",
   "je fais du sport",
@@ -50,26 +52,20 @@ function addSpecificTasks(){
 // Tanjona
 // Affichage de la liste des jours avec les tâches mis à jour en utilisant une fonction qui les affiche sur une console
 function displayWeeksday() {
-  console.log("Liste des jours avec les tâches mises à jour:");
-  console.log("=========================================");
-  weeksday.forEach(day => {
-      console.log(`${day.day}: ${day.task}`);
-  });
+  for(let i=0;i<weeksday.length;i++){
+    console.log(weeksday[i].day + ":"+ weeksday[i].task)
+  }
 }
-
 // Exécution des fonctions
+console.log("=========================================");
+console.log("I: Liste des jours avec les tâches mises à jour:");
+console.log("=========================================");
 addSpecificTasks(); // On met à jour les tâches
 displayWeeksday(); // On affiche la liste mise à jour 
 
-
-
-for (let i = 0; i < weeksday.length; i++) {
-    console.log(" voici le jour de la semaine " + weeksday[i].day + " et du tache " + weeksday[i].task)
-}
-
+//Tolotra
 // une fonction qui change les jours en français
-
-function translateTheDayIntoFrench(weeksday) {
+function translateTheDayIntoFrench() {
   const traduction = {
       "Monday": "Lundi",
       "Tuesday": "Mardi",
@@ -78,53 +74,41 @@ function translateTheDayIntoFrench(weeksday) {
       "Friday": "Vendredi",
       "Saturday": "Samedi",
       "Sunday": "Dimanche"
-  };
-
+  }
   for (let i = 0; i < weeksday.length; i++) {
-        weeksday[i].day = traduction[weeksday[i].day]||weeksday[i].day;
-    }
-
-
+    weeksday[i].day = traduction[weeksday[i].day];
+}
+}
 
 // Nirintsoa : Function pour supprimer les deux dernière tàches et ajoute deux nouvelles tâches.
-
 function updateTasks () {
-  tasks.splice(5, 6); // supprimer
+  tasks.splice(5, 2); // supprimer
   tasks.push("je vais au marché", "je fais du sport"); // ajouter 
+  addSpecificTasks();
 }
 
 // Heritiana : 
-// Créer une fonction qui nettoie toutes les tâches en string vide, en utilisant une boucle for et ce qui est nécessaire. 
-function removeTaskString(){
-  for(let i=0;i<weeksday.length;i++){
-    weeksday[i].task=""
+// Créer une fonction qui nettoie toutes les tâches en string vide, en utilisant une boucle for et ce qui est nécessaire.
+function removeTaskString(index) {
+  if (index >= 0 && index < weeksday.length) {
+    weeksday[index].task = "";
+  } else {
+    console.log("Cet index n'existe pas, desolé!!!");
   }
 }
 
-// Tanjona:
-// Reaffichage de la liste mis à jour de la liste de jours
-//Exécution  des fonctions
-addSpecificTasks();
-displayWeeksday();
-  
-//Affichage des jours un par un
-for (let i = 0; i<weeksday.length; i++){
-  console.log(`Voici le jour de la semaine ${weeksday[i].day} et sa tâche: ${weeksday[i].task}`);
-
-}
-// **Mise à jour des tâches**
-updateTasks();       // Supprime et ajoute de nouvelles tâches
-addSpecificTasks();  // Réassigne les nouvelles tâches
-console.log("\nAprès modification des tâches :");
-displayWeeksday();   // Affiche la liste mise à jour
-
-// **Traduction des jours en français**
+// Tanjona :
+console.log("=========================================");
+console.log("II: Liste des jours modifiés en Français avec la suppression des deux derniers taches et en les modifiant:");
+console.log("=========================================");
 translateTheDayIntoFrench();
-console.log("\nAprès traduction des jours en français :");
-displayWeeksday();   // Affiche la liste avec les jours en français
+updateTasks();
+displayWeeksday(); // On affiche la liste mise à jour
 
-// **Nettoyage des tâches**
-removeTaskString();
-console.log("\nAprès suppression des tâches :");
-displayWeeksday();   // Affiche la liste avec les tâches vides
+
+console.log("=========================================");
+console.log("III: Liste des jours où on a supprimé les tâches voulues :");
+console.log("=========================================");
+removeTaskString(4);
+displayWeeksday();
 
